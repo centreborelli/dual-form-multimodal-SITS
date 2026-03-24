@@ -11,7 +11,6 @@
   
   <title>Dual-form Networks for Multi-modal SITS Land Monitoring | ISPRS 2026</title>
   
-  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
   <link rel="stylesheet" href="static/css/bulma.min.css">
   <link rel="stylesheet" href="static/css/index.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -150,9 +149,9 @@
       <h1 class="hero-title">Comparative Analysis of Dual-Form Networks for Live Land Monitoring Using Multi-Modal Satellite Image Time Series</h1>
       
       <div class="authors">
-        <span>Iris Dumeur<sup>1,2</sup></span>, 
-        <span>Jérémy Anger<sup>1,2</sup></span>, 
-        <span>Gabriele Facciolo<sup>2,3</sup></span>
+        <span><a href="https://irisdum.github.io/" target="_blank" style="color: inherit; text-decoration: none;">Iris Dumeur</a><sup>1,2</sup></span>, 
+        <span><a href="https://github.com/kidanger/" target="_blank" style="color: inherit; text-decoration: none;">Jérémy Anger</a><sup>1,2</sup></span>, 
+        <span><a href="https://gfacciol.github.io/" target="_blank" style="color: inherit; text-decoration: none;">Gabriele Facciolo</a><sup>2,3</sup></span>
       </div>
       
       <div class="affiliations">
@@ -163,7 +162,8 @@
       
       <div class="buttons-container">
         <a href="#" class="btn btn-primary">📄 Paper (Coming Soon)</a>
-        <a href="https://github.com/iris-dumeur" class="btn btn-secondary">💻 Code</a>
+        <a href="https://github.com/centreborelli/dual-form-multimodal-SITS" class="btn btn-secondary">💻 Code</a>
+        <a href="#" class="btn btn-secondary">📊 Dataset (Coming Soon)</a>
         <a href="#abstract" class="btn btn-secondary">📖 Read Abstract</a>
       </div>
     </div>
@@ -231,10 +231,12 @@
     </div>
   </section>
 
-  <!-- Forecasting Task -->
+  <!-- Supervised Training Task -->
   <section class="section" style="background: #f7f9fc;">
     <div class="container">
-      <h2 class="section-title">Multi-Modal Forecasting Task</h2>
+      <h2 class="section-title">Supervised Training Task</h2>
+      
+      <h3 style="margin-top: 2rem; color: #667eea;">Multi-Modal Forecasting Task</h3>
       <p>
         We evaluate dual-form mechanisms on a forecasting task where the model predicts the next satellite acquisition given past observations.
       </p>
@@ -244,20 +246,38 @@
           Figure 2: Multi-modal forecasting framework
         </div>
       </div>
+      
+      <div class="figure-container" style="margin-top: 2rem;">
+        <img src="static/images/isprs_rec.png" alt="Reconstruction visualization">
+        <div class="figure-caption">
+          Figure 3: Visualization of the reconstruction in the multi-modal forecasting task using the Time CosFormer mechanism
+        </div>
+      </div>
+      
+      <h3 style="margin-top: 3rem; color: #667eea;">Solar Panel Detection</h3>
+      <p>
+        Multi-modal approaches consistently outperform mono-modal baselines on real-world construction monitoring.
+      </p>
+      <div class="figure-container">
+        <img src="static/images/isprs_mm_sp.png" alt="Solar panel detection" style="max-width: 800px; margin: 0 auto;">
+        <div class="figure-caption">
+          Figure 4: Solar panel detection results
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Results -->
+  <!-- Additional Results -->
   <section class="section">
     <div class="container">
-      <h2 class="section-title">Experimental Results</h2>
+      <h2 class="section-title">Additional Results</h2>
       
       <div class="results-grid">
         <div class="result-card">
           <h3>Forecasting Performance</h3>
           <p>Dual-form mechanisms achieve comparable performance to standard Transformers while enabling efficient recurrent inference.</p>
           <div class="figure-container">
-            <img src="static/images/boxplot_test.pdf" alt="Forecasting results" style="max-height: 300px; object-fit: contain;">
+            <img src="static/images/boxplot_test.png" alt="Forecasting results" style="max-height: 300px; object-fit: contain;">
           </div>
         </div>
         
@@ -265,23 +285,8 @@
           <h3>Look-back Length Effect</h3>
           <p>Models generalize well to longer sequences than seen during training, with temporal variants showing better adaptation.</p>
           <div class="figure-container">
-            <img src="static/images/all_res.pdf" alt="Look-back effect" style="max-height: 300px; object-fit: contain;">
+            <img src="static/images/all_res.png" alt="Look-back effect" style="max-height: 300px; object-fit: contain;">
           </div>
-        </div>
-        
-        <div class="result-card">
-          <h3>Solar Panel Detection</h3>
-          <p>Multi-modal approaches consistently outperform mono-modal baselines on real-world construction monitoring.</p>
-          <div class="figure-container">
-            <img src="static/images/isprs_mm_sp.pdf" alt="Solar panel detection" style="max-height: 300px; object-fit: contain;">
-          </div>
-        </div>
-      </div>
-      
-      <div class="figure-container" style="margin-top: 3rem;">
-        <img src="static/images/isprs_rec.pdf" alt="Reconstruction visualization">
-        <div class="figure-caption">
-          Figure 3: Visualization of the reconstruction in the multi-modal forecasting task using the Time CosFormer mechanism
         </div>
       </div>
     </div>
@@ -325,6 +330,9 @@
     <div class="container">
       <p>&copy; 2026 Iris Dumeur, Jérémy Anger, Gabriele Facciolo</p>
       <p>Centre Borelli, ENS Paris-Saclay</p>
+      <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">
+        Website template adapted from <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank" style="color: inherit; text-decoration: underline;">Academic Project Page Template</a>
+      </p>
     </div>
   </footer>
 
