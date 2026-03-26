@@ -214,7 +214,44 @@
       </div>
     </div>
   </section>
-
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Dual Form neural network </h2>
+      <p>
+        $X$ is a sequence composed of $N$ tokens $(\mathbf{x}_j)_{1 \leq j \leq N}$,<br>
+        $\q{i} = \mathbf{x}_i \cdot W_Q$, $\k{j} = \mathbf{x}_j \cdot W_K$, $\mathbf{v}_i = \mathbf{x}_i \cdot W_V$
+      </p>
+      <p>
+        $$\mathbf{o}_i = \sum_{j=1}^i a_{i,j} \mathbf{v}_j$$
+      </p>
+      <div class="results-grid">
+        <div class="result-card">
+          <h3>Causal Attention</h3>
+          <p>
+            $$a_{i,j} = \frac{\text{s}(\q{i}, \k{j})}{\sum_{j=1}^i \text{s}(\q{i}, \k{j})}$$
+          </p>
+          <p><strong>Kernel-based attention mechanisms:</strong></p>
+          <p>
+            $$\text{s}(\q{i}, \k{j}) = \phi(\q{i}) \cdot \phi(\k{j})^T$$
+          </p>
+          <ul style="margin-bottom: 0;">
+            <li>Similarity function is <strong>separable</strong></li>
+          </ul>
+        </div>
+        
+        <div class="result-card">
+          <h3>Retention</h3>
+          <p>
+            $$a_{i,j} = \gamma^{i-j} \phi^{\text{ret}}(\q{i}) \cdot \phi^{\text{ret}}(\k{j})^T$$
+          </p>
+          <ul style="margin-bottom: 0;">
+            <li>$\gamma$ is a decay term</li>
+            <li>$a_{i,j}$ are not normalized</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
   <!-- Architecture -->
   <section class="section">
     <div class="container">
@@ -242,56 +279,12 @@
       <p style="margin-top: 1rem;">
         Additionally, we propose <strong>temporal variants</strong> (Time CosFormer, Time LinRoFormer, Time Retention) that compute distances based on actual acquisition dates rather than sequence indices, addressing SITS temporal irregularity.
       </p>
-    </div>
-  </section>
-  <section style="font-family: sans-serif; line-height: 1.6; max-width: 900px; margin: auto;">
-  
-    <h2 style="color: #2d3748; border-bottom: 2px solid #667eea; padding-bottom: 0.5rem;">
-      Dual-Form Attention Mechanisms
-  </h2>
-
-  <div style="display: flex; flex-wrap: wrap; gap: 2rem; margin-top: 1.5rem;">
-    
-    <div style="flex: 1; min-width: 300px;">
-      <h3 style="color: #4a5568;">Notations</h3>
-      <p>
-        $X$ is a sequence composed of $N$ tokens $(\mathbf{x}_j)_{1 \leq j \leq N}$,<br>
-        $\q{i} = \mathbf{x}_i \cdot W_Q$, $\k{j} = \mathbf{x}_j \cdot W_K$, $\mathbf{v}_i = \mathbf{x}_i \cdot W_V$
-      </p>
-      <p>
-        $$\mathbf{o}_i = \sum_{j=1}^i a_{i,j} \mathbf{v}_j$$
-      </p>
-    </div>
-
-    <div style="flex: 1; min-width: 300px; background-color: #f7fafc; padding: 1.5rem; border-radius: 8px; border-left: 5px solid #667eea;">
-      <h3 style="margin-top: 0; color: #2d3748;">Causal Attention</h3>
-      <p>
-        $$a_{i,j} = \frac{\text{s}(\q{i}, \k{j})}{\sum_{j=1}^i \text{s}(\q{i}, \k{j})}$$
-      </p>
       
-      <p><strong>Kernel-based attention mechanisms:</strong></p>
-      <p>
-        $$\text{s}(\q{i}, \k{j}) = \phi(\q{i}) \cdot \phi(\k{j})^T$$
-      </p>
-      <ul style="margin-bottom: 0;">
-        <li>Similarity function is <strong>separable</strong></li>
-      </ul>
     </div>
-
-  </div>
-
-  <div style="margin-top: 2rem; background-color: #f0f4f8; padding: 1.5rem; border-radius: 8px; border-left: 5px solid #48bb78;">
-    <h3 style="margin-top: 0; color: #2d3748;">Retention</h3>
-    <p>
-      $$a_{i,j} = \gamma^{i-j} \phi^{\text{ret}}(\q{i}) \cdot \phi^{\text{ret}}(\k{j})^T$$
-    </p>
-    <ul style="margin-bottom: 0;">
-      <li>$\gamma$ is a decay term</li>
-      <li>$a_{i,j}$ are not normalized</li>
-    </ul>
-  </div>
-
   </section>
+
+
+
   <!-- Supervised Training Task -->
   <section class="section" style="background: #f7f9fc;">
     <div class="container">
