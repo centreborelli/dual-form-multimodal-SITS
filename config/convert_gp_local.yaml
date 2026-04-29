@@ -1,0 +1,7 @@
+root_dir: /home/iris/Documents/datasets/guyanne/orpaillage
+path_geojson: null
+chunk_size: 128
+output_dir: /home/iris/Documents/datasets/guyanne/orpaillage/mm_gp_zarr
+num_workers: 1
+opt: gp
+buff_days: 3

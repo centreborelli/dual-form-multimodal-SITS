@@ -1,0 +1,8 @@
+defaults:
+  - shallow_forecaster: mm_mlp_forecast
+  - _self_
+_target_: cd_mm_sits.lightning_module.supervised_forecast.MonoMForecast
+pred_after_n: 5
+compile: false
+use_delta_times: false
+mod: ${datamodule.mod}

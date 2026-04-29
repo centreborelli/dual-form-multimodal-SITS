@@ -1,0 +1,2 @@
+_target_: cd_mm_sits.lightning_module.mm_supervised_sp_detection.MMSupervisedSP
+compile: false

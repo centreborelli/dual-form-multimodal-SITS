@@ -1,0 +1,3 @@
+path_dataset: /lustre/fsn1/projects/rech/jmo/ubc65oh/datasets/mm_solar_panel_zarr_orbites2
+k_fold: 8
+patch_size: 128

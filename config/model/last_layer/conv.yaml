@@ -1,0 +1,3 @@
+_target_: cd_mm_sits.model.decoder.ConvBasicDecoder
+inplanes: ${shared.d_model}
+planes: ${shared.num_class}

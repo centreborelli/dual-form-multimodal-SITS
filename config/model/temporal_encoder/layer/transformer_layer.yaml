@@ -1,0 +1,14 @@
+defaults:
+  - attn_block: mha
+  - feed_forward: ffl
+  - _self_
+
+_target_: cd_mm_sits.layers.transformer_layers.VanillaTransformerLayer
+
+
+norm1:
+  _target_: torch.nn.LayerNorm
+  normalized_shape: ${shared.d_model}
+norm2:
+  _target_: torch.nn.LayerNorm
+  normalized_shape: ${shared.d_model}

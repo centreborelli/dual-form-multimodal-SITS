@@ -1,0 +1,18 @@
+default:
+  image: ghcr.io/prefix-dev/pixi:latest
+
+stages:
+  - tests
+
+lint:
+  stage: tests
+  script:
+    - apt update && apt install git -y
+    - pixi run -e dev-cpu pre-commit run --all-files --show-diff-on-failure
+
+pytest:
+  stage: tests
+  tags:
+    - high  # to get a more powerful worker
+  script:
+    - SKIP_DATASET_TESTS=1 pixi run -e dev-cpu pytest -m 'not iris_local'

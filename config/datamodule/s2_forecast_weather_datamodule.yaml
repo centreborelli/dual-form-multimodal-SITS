@@ -1,0 +1,13 @@
+defaults:
+- transform: mini_sqrt_s2_transform.yaml
+_target_: cd_mm_sits.data.datamodule.monom_forecastDataModule.MonoMForecastDataModule
+ziptif_paths: ${server.mm_forecast_dataset_mini}
+batch_size: ${train.train_config.batch_size}
+num_workers: 10
+max_len: 15
+crop_size: 64
+mod: s2
+path_agera_5: ${server.path_agera5}
+weather_past: ${shared.agera_5_max_len}
+weather_vars: null
+consecutive_samples_in_test: true

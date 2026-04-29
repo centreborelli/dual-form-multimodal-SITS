@@ -1,0 +1,12 @@
+path_sp_dataset: ../tests-datasets/mm_solar_panel/zarr_ex
+path_brads1: ../tests-datasets/BraDD-S1TS_zenodo/Samples/
+path_mm_sp_dataset: ../tests-datasets/mm_solar_panel/zarr_ex
+path_mm_gp_dataset: ../tests-datasets/guyanne/orpaillage/mm_gp_zarr
+mm_forecast_dataset_v1:
+  _target_: cd_mm_sits.data.datamodule.mm_forecast_datamodule.ZipTifPaths
+  index_paths:
+    s1: [../tests-datasets/mm_forecast/v1-s1.ziptif]
+    s2: [../tests-datasets/mm_forecast/v1-s2.ziptif]
+  zip_paths:
+    v1-s1: ../tests-datasets/mm_forecast/v1-s1.zip
+    v1-s2: ../tests-datasets/mm_forecast/v1-s2.zip

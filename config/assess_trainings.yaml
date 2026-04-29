@@ -1,0 +1,3 @@
+path_expe: /home/iris/Documents/detevent/trainings/solar_panel_detection/
+dataset_path: /home/iris/Documents/datasets/solar_panels_npy
+path_dir_csv: /home/iris/Documents/datasets/solar_panels_npy

@@ -1,0 +1,3 @@
+_target_: cd_mm_sits.model.sse.FCNResNet50
+inplanes: ${shared.input_channels}
+planes: ${shared.d_model}

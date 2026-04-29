@@ -1,0 +1,5 @@
+defaults:
+  - layer: transformer_layer
+  - _self_
+_target_: cd_mm_sits.model.template_dual_encoders.DualEncoder
+num_layers: 3

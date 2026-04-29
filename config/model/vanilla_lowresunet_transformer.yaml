@@ -1,0 +1,9 @@
+defaults:
+  - sse: low_resunet_gn.yaml
+  - last_layer: upshuffle.yaml
+  - temporal_encoder: transformer.yaml
+  - tpe: vaswani.yaml
+  - _self_
+_target_: cd_mm_sits.model.sste.SSTE
+is_causal: true
+convert_to_dyntanh: false

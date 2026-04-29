@@ -1,0 +1,6 @@
+_target_: cd_mm_sits.layers.cosattention.TimeCosFormerAttention
+embed_dim: ${shared.d_model}
+num_heads: 2
+act_fun: elu
+dk: ${shared.d_model}
+max_effect: 700

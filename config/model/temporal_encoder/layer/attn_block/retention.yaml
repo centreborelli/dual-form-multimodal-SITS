@@ -1,0 +1,7 @@
+_target_: cd_mm_sits.layers.retention.MultiScaleRetention
+embed_dim: ${shared.d_model}
+num_heads: 2
+xpos: xpos
+T_base: 100000
+scale_base: 365
+dk: ${shared.d_model}

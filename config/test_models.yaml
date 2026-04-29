@@ -1,0 +1,10 @@
+defaults:
+  - _self_
+  - metrics: mm_sp.yaml
+path_expe: /lustre/fsn1/projects/rech/jmo/ubc65oh/trainings/isprs_mm_sp_benchmark_v1
+path_dataset: /lustre/fsn1/projects/rech/jmo/ubc65oh/datasets/mm_solar_panel_zarr_orbites2
+path_dir_csv: /lustre/fsn1/projects/rech/jmo/ubc65oh/datasets/mm_solar_panel_zarr_orbites2
+max_len_s2: 64
+max_len_s1: 64
+list_models_path: null
+option: mm_sp

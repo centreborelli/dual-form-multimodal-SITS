@@ -1,0 +1,13 @@
+defaults:
+  - attn_block: timecosformer
+  - feed_forward: ffl
+  - _self_
+
+_target_: cd_mm_sits.layers.transformer_layers.TimeFormerLayer
+
+norm1:
+  _target_: torch.nn.LayerNorm
+  normalized_shape: ${shared.d_model}
+norm2:
+  _target_: torch.nn.LayerNorm
+  normalized_shape: ${shared.d_model}

@@ -1,0 +1,7 @@
+accuracy:
+  _target_: torchmetrics.classification.Accuracy
+  task: binary
+f1_score:
+  _target_: torchmetrics.F1Score
+  task: binary
+  num_classes: 2

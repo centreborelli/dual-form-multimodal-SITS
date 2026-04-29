@@ -1,0 +1,28 @@
+train_config:
+  _recursive_: false
+  _target_: cd_mm_sits.lightning_module.template_module.TrainConfig
+  loss:
+    _target_: cd_mm_sits.lightning_module.losses.FocalLoss
+    alpha: 0.83
+    gamma: 1
+  batch_size: 1
+  optimizer:
+    _target_: cd_mm_sits.lightning_module.hydra_dataclass.OptimizerAdamConfig
+  optimizer_monitor: val_loss
+  scheduler:
+    _target_: cd_mm_sits.lightning_module.hydra_dataclass.CAWConfig
+    T_0: 1
+  lr: 0.0006
+trainer:
+  _target_: lightning.pytorch.Trainer
+  log_every_n_steps: 20
+  devices: 1
+  accelerator: cpu
+  max_epochs: 500
+  min_epochs: 100
+  limit_val_batches: 1.0
+  limit_train_batches: 1.0
+  check_val_every_n_epoch: 1
+  accumulate_grad_batches: 1
+  strategy: auto
+slurm_restart: false

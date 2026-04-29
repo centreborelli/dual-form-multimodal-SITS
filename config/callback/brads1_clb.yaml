@@ -1,0 +1,16 @@
+learningrate:
+  _target_: lightning.pytorch.callbacks.LearningRateMonitor
+
+
+checkpoint:
+  _target_: lightning.pytorch.callbacks.ModelCheckpoint
+  monitor: val_f1_score
+  mode: max
+  verbose: true
+  save_top_k: 2
+  save_last: true
+  auto_insert_metric_name: true
+  filename: "metric-{epoch:02d}-{val_f1_score:.4f}"
+visu:
+  _target_: cd_mm_sits.callback.brads1_clb.PlotChangeMapCallback
+  log_every_n_steps: 30

@@ -1,0 +1,10 @@
+_target_: cd_mm_sits.layers.xpos_attention.TimeXPOSAttention
+embed_dim: ${shared.d_model}
+num_heads: 2
+act_fun: elu
+dk: ${shared.d_model}
+base: 1000
+gamma_init: 32
+gamma_end: 512
+apply_denom: true
+scale_base: ${shared.d_model}

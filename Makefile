@@ -1,19 +1,15 @@
-ruff:
+ruff_cmd:
 	ruff check . --output-format pylint
-mypy:
+
+mypy_cmd:
 	mypy src/ tests/
+
 test:
 	pytest tests/
-pylint:
-	pylint --ignore=${PYLINT_IGNORED} src/ tests/ --load_plugins=perflint
 
-check:
-	ruff mypy test pylint
-precommit:
-	pre-commit install
-createenv:
-	pixi shell
-initenv:
-	pip install -e .
-setup:
-	createenv initenv precommit 
+check: ruff_cmd mypy_cmd test
+
+pylint_cmd:
+	pylint --ignore=$(PYLINT_IGNORED) src/ tests/ --load-plugins=perflint
+
+check: pylint_cmd ruff mypy test

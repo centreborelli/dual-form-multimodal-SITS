@@ -1,0 +1,5 @@
+tensorboard:
+  _target_: lightning.pytorch.loggers.TensorBoardLogger
+  log_graph: false #true
+  save_dir: /home/ad/dumeuri/trainings/
+  default_hp_metric: false

@@ -1,0 +1,8 @@
+
+root_dir: /lustre/fsn1/projects/rech/jmo/ubc65oh/datasets/mm_sp_tif #/lustre/fsstor/projects/rech/jmo/ubc65oh/solar_panel_detection_v1 #/lustre/fsn1/projects/rech/jmo/ukz85dy/solar_panel_detection_v1
+path_geojson: /lustre/fsn1/projects/rech/jmo/ubc65oh/datasets/mm_solar_panel_zarr_orbites2/test.geojson
+chunk_size: 128
+output_dir: /lustre/fsn1/projects/rech/jmo/ubc65oh/datasets/mm_solar_panel_zarr_orbites2
+num_workers: 8
+opt: sp
+buff_days: 1

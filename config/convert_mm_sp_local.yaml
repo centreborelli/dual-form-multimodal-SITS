@@ -1,0 +1,7 @@
+root_dir: /home/iris/Documents/datasets/mm_solar_panel/mini_dataset
+path_geojson: /home/iris/Documents/datasets/mm_solar_panel/test.geojson
+chunk_size: 128
+output_dir: /home/iris/Documents/datasets/mm_solar_panel/mm_solar_panel_zarr
+num_workers: 1
+opt: sp
+buff_days: 1

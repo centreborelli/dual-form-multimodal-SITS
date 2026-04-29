@@ -1,0 +1,2 @@
+_target_: cd_mm_sits.lightning_module.supervised_cd.SupervisedCD
+compile: false

@@ -1,0 +1,32 @@
+path_export_training_dir: path_to_replace/trainings
+path_sp_dataset: path_to_replace/datasets/mm_solar_panel/zarr_ex
+path_brads1: path_to_replace/datasets/BraDD-S1TS_zenodo/Samples/
+path_mm_sp_dataset: path_to_replace/datasets/mm_solar_panel/zarr_ex
+path_mm_gp_dataset: path_to_replace/datasets/guyanne/orpaillage/mm_gp_zarr
+mm_forecast_dataset_v1:
+  _target_: cd_mm_sits.data.datamodule.mm_forecast_datamodule.ZipTifPaths
+  index_paths:
+    s1: [path_to_replace/datasets/pretraining/v1-s1.ziptif]
+    s2: [path_to_replace/datasets/pretraining/v1-s2.ziptif]
+  zip_paths:
+    v1-s1: path_to_replace/datasets/pretraining/v1-s1.zip
+    v1-s2: path_to_replace/datasets/pretraining/v1-s2.zip
+mm_forecast_dataset_nano:
+  _target_: cd_mm_sits.data.datamodule.mm_forecast_datamodule.ZipTifPaths
+  index_paths:
+    s1: [path_to_replace/datasets/pretraining/nano-s1.ziptif]
+    s2: [path_to_replace/datasets/pretraining/nano-s2.ziptif]
+  zip_paths:
+    nano-s1: path_to_replace/datasets/pretraining/nano-s1.zip
+    nano-s2: path_to_replace/datasets/pretraining/nano-s2.zip
+mm_forecast_dataset_mini:
+  _target_: cd_mm_sits.data.datamodule.mm_forecast_datamodule.ZipTifPaths
+  index_paths:
+    s1: [path_to_replace/datasets/pretraining/nano-s1.ziptif, path_to_replace/datasets/pretraining/mini-s1.ziptif]
+    s2: [path_to_replace/datasets/pretraining/nano-s2.ziptif, path_to_replace/datasets/pretraining/mini-s2.ziptif]
+  zip_paths:
+    nano-s1: path_to_replace/datasets/pretraining/nano-s1.zip
+    nano-s2: path_to_replace/datasets/pretraining/nano-s2.zip
+    mini-s1: path_to_replace/datasets/pretraining/mini-s1.zip
+    mini-s2: path_to_replace/datasets/pretraining/mini-s2.zip
+path_agera5: path_to_replace/datasets/pretraining/all_sites_mini_agera5.parquet

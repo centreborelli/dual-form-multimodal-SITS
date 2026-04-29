@@ -1,0 +1,5 @@
+_target_: torch.nn.MultiheadAttention
+embed_dim: ${shared.d_model}
+num_heads: 2
+dropout: 0
+batch_first: true

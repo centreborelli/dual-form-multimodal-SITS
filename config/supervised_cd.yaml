@@ -1,0 +1,24 @@
+defaults:
+  - _self_
+  - shared/shared_params
+  - server: local
+  - model: vanilla_lowresunet_transformer.yaml
+  - train: cd_train_focal.yaml
+  - datamodule: datamodule.yaml
+  - lightning_module: supervised_cd.yaml
+  - metrics: cd.yaml
+  - logger: default.yaml
+  - callback: optuna_clb.yaml
+ckpt_path: null
+hydra:
+  run:
+    dir: ${server.path_export_training_dir}/${hydra.job.name}/s2/fold_${datamodule.fold_expe}/${suffix}/${now:%Y-%m-%d}/${now:%H-%M-%S}
+  sweep:
+    dir: ${server.path_export_training_dir}/${hydra.job.name}/s2/fold_${datamodule.fold_expe}/${suffix}/${now:%Y-%m-%d}/${now:%H-%M-%S}
+  job:
+    name: s2_solar_panel
+  mode: null
+suffix: ${model.temporal_encoder.layer.attn_block._target_}_${model.is_causal}
+optimized_metric: val_loss
+run_test: true
+seed: 1

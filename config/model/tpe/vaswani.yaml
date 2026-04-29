@@ -1,0 +1,2 @@
+_target_: cd_mm_sits.model.temporal_positional_encoder.PositionalEncoder
+d: ${shared.d_model}

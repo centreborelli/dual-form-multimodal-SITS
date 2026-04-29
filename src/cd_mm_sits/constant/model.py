@@ -1,0 +1,3 @@
+S2_IDX = 0
+S1_IDX = 1
+PAD_MOD_IGNORE = -1

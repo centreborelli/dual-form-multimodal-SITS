@@ -1,0 +1,24 @@
+defaults:
+  - _self_
+  - shared/shared_params_forecast_s2
+  - server: local
+  - model: vanilla_unet_transformer.yaml
+  - train: forecast.yaml
+  - datamodule: s2_forecast_datamodule.yaml
+  - lightning_module: s2_supervised_forecast.yaml
+  - logger: default.yaml
+  - callback: monom_forecast.yaml
+ckpt_path: null
+metrics: null
+hydra:
+  run:
+    dir: ${server.path_export_training_dir}/${hydra.job.name}/s2/${suffix}/model_layers_${model.temporal_encoder.num_layers}/forec_${lightning_module.shallow_forecaster.n_layers}/${now:%Y-%m-%d}/${now:%H-%M-%S-%f}
+  sweep:
+    dir: ${server.path_export_training_dir}/${hydra.job.name}/s2/${suffix}/model_layers_${model.temporal_encoder.num_layers}/forec_${lightning_module.shallow_forecaster.n_layers}/${now:%Y-%m-%d}/${now:%H-%M-%S-%f}
+  job:
+    name: isprs_supervised_forecast_v1
+  mode: null
+suffix: transformer_causal_${model.is_causal}
+optimized_metric: val_loss
+run_test: true
+seed: 1

@@ -1,0 +1,17 @@
+defaults:
+  - weather_encoder: weather_lq_encoder
+  - _self_
+_target_: cd_mm_sits.model.forecaster.RopeMMShallowForecaster
+inplanes: ${shared.num_class}
+planes: 32
+d_pe: 64
+bands_s2: ${shared.input_channels_s2}
+bands_s1: ${shared.input_channels_s1}
+n_mod_feat: 16
+base: 1000
+n_layers: 3
+use_norm: true
+angle_encoder:
+  _target_: cd_mm_sits.model.forecaster.AngleEncoder
+  n_angles: ${shared.input_s1_angles}
+  d_: 16

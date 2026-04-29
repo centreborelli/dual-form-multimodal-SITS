@@ -1,0 +1,24 @@
+defaults:
+  - _self_
+  - shared/shared_params_forecast
+  - server: local
+  - model: mm_sste_lowres.yaml
+  - train: forecast.yaml
+  - datamodule: mm_forecast_weather_datamodule.yaml
+  - lightning_module: mm_supervised_weather_forecast.yaml
+  - logger: default.yaml
+  - callback: mm_forecast_clb.yaml
+ckpt_path: null
+metrics: null
+hydra:
+  run:
+    dir: ${server.path_export_training_dir}/${hydra.job.name}/s2s1/${suffix}/seed_${seed}/model_layers_${model.temporal_encoder.num_layers}/forec_${lightning_module.shallow_forecaster.n_layers}/${now:%Y-%m-%d}/${now:%H-%M-%S-%f}
+  sweep:
+    dir: ${server.path_export_training_dir}/${hydra.job.name}/s2s1/${suffix}/seed_${seed}/model_layers_${model.temporal_encoder.num_layers}/forec_${lightning_module.shallow_forecaster.n_layers}/${now:%Y-%m-%d}/${now:%H-%M-%S-%f}
+  job:
+    name: ssl_forecast
+  mode: null
+suffix: ${model.temporal_encoder.layer.attn_block._target_}_${model.is_causal}
+optimized_metric: val_loss
+run_test: true
+seed: 1

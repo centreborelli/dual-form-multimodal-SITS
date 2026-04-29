@@ -1,0 +1,8 @@
+d_model: 64
+input_channels_s2: 10
+input_channels_s1: 2
+input_channels: 10
+num_class: 64
+input_channels_agera5: 8
+input_s1_angles: 2
+agera_5_max_len: 10

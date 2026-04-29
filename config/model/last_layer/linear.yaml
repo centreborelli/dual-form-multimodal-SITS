@@ -1,0 +1,3 @@
+_target_: torch.nn.Linear
+in_features: ${shared.d_model}
+out_features: ${shared.num_class}

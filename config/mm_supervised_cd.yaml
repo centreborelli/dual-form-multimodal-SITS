@@ -1,0 +1,24 @@
+defaults:
+  - _self_
+  - shared/shared_params_mm
+  - server: local
+  - model : mm_sste_lowres.yaml
+  - train: cd_train_focal.yaml
+  - datamodule: mm_sp_datamodule.yaml
+  - lightning_module: mm_supervised_cd.yaml
+  - metrics: mm_sp.yaml
+  - logger: default.yaml
+  - callback: optuna_clb.yaml
+ckpt_path: null
+hydra:
+  run:
+    dir: ${server.path_export_training_dir}/${hydra.job.name}/s2s1/fold_${datamodule.fold_expe}/${suffix}/${now:%Y-%m-%d}/${now:%H-%M-%S-%f}
+  sweep:
+    dir: ${server.path_export_training_dir}/${hydra.job.name}/s2s1/fold_${datamodule.fold_expe}/${suffix}/${now:%Y-%m-%d}/${now:%H-%M-%S-%f}
+  job:
+    name: mm_solar_panel_detection
+  mode: null
+suffix: ${model.temporal_encoder.layer.attn_block._target_}_${model.is_causal}
+optimized_metric: val_loss
+run_test: true
+seed: 1

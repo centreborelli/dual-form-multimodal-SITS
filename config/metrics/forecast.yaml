@@ -1,0 +1,6 @@
+mse_s1:
+  _target_: cd_mm_sits.metrics.reconstruction.MaskedMSEMetric
+  mod: s1
+mse_s2:
+  _target_: cd_mm_sits.metrics.reconstruction.MaskedMSEMetric
+  mod: s2

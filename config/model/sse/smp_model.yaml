@@ -1,0 +1,6 @@
+_target_: cd_mm_sits.model.sse.SMPEncoder
+inplanes: ${shared.input_channels}
+planes: ${shared.d_model}
+encoder_name: efficientnet-b0 #mobilenet_v2
+encoder_depth: 2
+encoder_weights: null

@@ -1,0 +1,12 @@
+learningrate:
+  _target_: lightning.pytorch.callbacks.LearningRateMonitor
+
+checkpoint:
+  _target_: lightning.pytorch.callbacks.ModelCheckpoint
+  monitor: val_loss
+  mode: min
+  verbose: true
+  save_top_k: 1
+  save_last: true
+  auto_insert_metric_name: true
+  filename: "best"

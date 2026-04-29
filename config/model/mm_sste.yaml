@@ -1,0 +1,11 @@
+defaults:
+  - sse_s1: unet_gn.yaml
+  - sse_s2: unet_gn.yaml
+  - last_layer: conv.yaml
+  - temporal_encoder: transformer.yaml
+  - tpe: vaswani.yaml
+  - _self_
+_target_: cd_mm_sits.model.mm_sste.MMSSTE
+is_causal: true
+n_mod_feat: 16
+d_model: ${shared.d_model}

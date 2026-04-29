@@ -1,0 +1,7 @@
+_target_: cd_mm_sits.model.forecaster.WeatherLQEncoder
+n_head: 1
+d_k: 32
+d_in: ${shared.input_channels_agera5}
+n_q: 4
+d_v: 32
+max_len: ${shared.agera_5_max_len}

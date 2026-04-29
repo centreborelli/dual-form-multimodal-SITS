@@ -1,0 +1,13 @@
+path_dataset:
+  _target_: cd_mm_sits.data.datamodule.mm_forecast_datamodule.ZipTifPaths
+  index_paths:
+    s1: [/home/anger/diskb/data/detevent/pretraining/nano-s1.ziptif, /home/anger/diskb/data/detevent/pretraining/mini-s1.ziptif]
+    s2: [/home/anger/diskb/data/detevent/pretraining/nano-s2.ziptif, /home/anger/diskb/data/detevent/pretraining/mini-s2.ziptif]
+  zip_paths:
+    nano-s1: /home/anger/diskb/data/detevent/pretraining/nano-s1.zip
+    nano-s2: /home/anger/diskb/data/detevent/pretraining/nano-s2.zip
+    mini-s1: /home/anger/diskb/data/detevent/pretraining/mini-s1.zip
+    mini-s2: /home/anger/diskb/data/detevent/pretraining/mini-s2.zip
+n_sample: 130
+task: forecast
+plot_histogram: false

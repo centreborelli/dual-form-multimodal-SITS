@@ -1,0 +1,10 @@
+_target_: cd_mm_sits.data.datamodule.mm_zarr_sp_datamodule.MMSPDataModule
+dataset_path: ${server.path_mm_gp_dataset}
+path_dir_csv: ${server.path_mm_gp_dataset}
+max_len_s2: 10
+max_len_s1: 10
+batch_size: ${train.train_config.batch_size}
+num_workers: 4
+fold_expe: null
+crop_size: 128
+is_mask_site: false

@@ -1,0 +1,4 @@
+_target_: cd_mm_sits.model.forecaster.MLPWeatherEncoder
+d_in: ${shared.input_channels_agera5}
+d_out: 32
+max_len: ${shared.agera_5_max_len}

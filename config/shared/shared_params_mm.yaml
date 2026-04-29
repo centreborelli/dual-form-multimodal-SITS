@@ -1,0 +1,4 @@
+d_model: 64
+input_channels_s2: 10
+input_channels_s1: 2
+num_class: 1

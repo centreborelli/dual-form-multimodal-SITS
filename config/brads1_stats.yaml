@@ -1,0 +1,3 @@
+path_dataset: /home/iris/Documents/datasets/BraDD-S1TS_zenodo/Samples
+n_sample: 100
+task: brads1

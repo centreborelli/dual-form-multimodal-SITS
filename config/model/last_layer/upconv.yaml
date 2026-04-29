@@ -1,0 +1,3 @@
+_target_: cd_mm_sits.model.decoder.ConvUpSample
+inplanes: ${shared.d_model}
+planes: ${shared.num_class}

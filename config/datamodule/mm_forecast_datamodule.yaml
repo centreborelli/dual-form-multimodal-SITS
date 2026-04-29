@@ -1,0 +1,7 @@
+_target_: cd_mm_sits.data.datamodule.mm_forecast_datamodule.MMForecastDataModule
+ziptif_paths: ${server.mm_forecast_dataset_mini}
+batch_size: ${train.train_config.batch_size}
+num_workers: 10
+max_len: 15
+crop_size: 64
+consecutive_samples_in_test: true

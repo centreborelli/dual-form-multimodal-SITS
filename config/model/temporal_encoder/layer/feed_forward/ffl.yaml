@@ -1,0 +1,5 @@
+_target_: cd_mm_sits.layers.transformer_layers.FFLayer
+d_model: ${shared.d_model}
+dim_feedforward: 128
+activation:
+  _target_: torch.nn.GELU

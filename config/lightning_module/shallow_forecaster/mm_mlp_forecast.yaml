@@ -1,0 +1,9 @@
+_target_: cd_mm_sits.model.forecaster.MMShallowForecast
+inplanes: ${shared.num_class}
+planes: 32
+d_pe: 64
+bands_s2: ${shared.input_channels_s2}
+bands_s1: ${shared.input_channels_s1}
+n_mod_feat: 16
+n_layers: 1
+use_norm: true

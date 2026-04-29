@@ -1,0 +1,17 @@
+_target_: cd_mm_sits.model.sse.LowResUnet
+inplanes: ${shared.input_channels}
+planes: ${shared.d_model}
+encoder_widths: [64, 64, 64, 128]
+decoder_widths: [32, 32, 64, 128]
+encoder_norm: batch
+padding_mode: reflect
+decoding_norm: batch
+return_maps: false
+skip_conv_norm: batch
+str_conv_k_dec: 2
+str_conv_s_dec: 2
+str_conv_p_dec: 0
+momentum: 0.1
+activation:
+  _target_: torch.nn.GELU
+gated_skip_conv: false
