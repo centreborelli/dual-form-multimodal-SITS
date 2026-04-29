@@ -1,7 +1,0 @@
-root_dir: /home/dumeuri/datasets/orpaillage/
-path_geojson: daman
-chunk_size: 128
-output_dir: /home/dumeuri/datasets/orpaillage/mm_gp_zarr
-num_workers: 1
-opt: gp
-buff_days: 5
