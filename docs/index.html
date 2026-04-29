@@ -154,6 +154,37 @@
       padding: 2rem 1.5rem;
       text-align: center;
     }
+    .sim-table-container {
+      margin: 2rem auto;
+      max-width: 900px;
+      overflow-x: auto;
+    }
+    .sim-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      font-size: 1rem;
+    }
+    .sim-table th,
+    .sim-table td {
+      padding: 0.75rem 1rem;
+      text-align: left;
+    }
+    .sim-table thead th {
+      border-top: 2px solid #333;
+      border-bottom: 1px solid #333;
+      font-weight: 600;
+    }
+    .sim-table tbody tr:last-child td {
+      border-bottom: 2px solid #333;
+    }
+    .table-caption {
+      text-align: center;
+      font-style: italic;
+      color: #555;
+      margin-top: 0.75rem;
+      font-size: 0.95rem;
+    }
   </style>
 </head>
 <body>
@@ -178,7 +209,7 @@
       <div class="buttons-container">
         <a href="https://hal.science/hal-05563698" class="btn btn-primary">📄 Paper (preprint)</a>
         <a href="https://github.com/centreborelli/dual-form-multimodal-SITS" class="btn btn-secondary">💻 Code</a>
-        <a href="#" class="btn btn-secondary">📊 Dataset (Coming Soon)</a>
+        <a href="https://zenodo.org/records/19481098" class="btn btn-secondary">📊 Dataset (Coming Soon)</a>
       </div>
     </div>
   </section>
@@ -248,6 +279,37 @@
             <li>$\gamma$ is a decay term</li>
             <li>$a_{i,j}$ are not normalized</li>
           </ul>
+        </div>
+      </div>
+      <div class="sim-table-container">
+        <table class="sim-table">
+          <thead>
+            <tr>
+              <th>Attention mechanism</th>
+              <th>Similarity function $\text{s}(\mathbf{q}_i,\mathbf{k}_j)$</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Transformer [Vaswani et al., 2017]</td>
+              <td>$\exp\!\left(\dfrac{\mathbf{q}_i \cdot \mathbf{k}_j}{\sqrt{d_K}}\right)$</td>
+            </tr>
+            <tr>
+              <td>Linear Transformer [Katharopoulos et al., 2020]</td>
+              <td>$\left(1+\text{elu}(\mathbf{q}_i)\right)\cdot \left(1+\text{elu}(\mathbf{k}_j)\right)^T$</td>
+            </tr>
+            <tr>
+              <td>CosFormer [Qin et al., 2022]</td>
+              <td>$\cos\!\left(\dfrac{\pi}{2} \cdot \dfrac{i-j}{M}\right)\psi(\mathbf{q}_i)\cdot\psi(\mathbf{k}_j)^T$</td>
+            </tr>
+            <tr>
+              <td>RoPE Linear Transformer [Su et al., 2024]</td>
+              <td>$(\psi(\mathbf{q}_n) R_{i\boldsymbol{\theta}})(\psi(\mathbf{k}_m) R_{j\boldsymbol{\theta}})^T$</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="table-caption">
+          Table 1: Considered attention mechanisms in this study and corresponding similarity functions.
         </div>
       </div>
     </div>
