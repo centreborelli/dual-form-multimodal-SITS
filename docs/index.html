@@ -309,7 +309,7 @@
           </tbody>
         </table>
         <div class="table-caption">
-          Table 1: Considered attention mechanisms in this study and corresponding similarity functions.
+          Table 1: Considered attention mechanisms in this study and corresponding similarity functions. $\psi$ is a positive feature map function.
         </div>
       </div>
     </div>
@@ -405,6 +405,19 @@
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- Conclusion -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Conclusion</h2>
+      <p>
+        We compared several dual-form attention mechanisms for multi-modal satellite image time series analysis. On both the supervised forecasting task and the multi-temporal segmentation task, these mechanisms successfully fuse Sentinel-1 and Sentinel-2 data, often matching the performance of standard causal attention while offering a recurrent formulation better suited for efficient inference. This is promising for regular and up-to-date land monitoring applications.
+      </p>
+      <p>
+        Our study of the look-back length shows that, in the mono-modal forecasting setting, simple temporal reweighting schemes such as CosFormer and our proposed Time CosFormer perform on par with — or better than — more complex mechanisms like LinRoFormer or Retention. In the multi-modal setting, however, plain linear attention outperforms these reweighted dual-form variants.
+      </p>
     </div>
   </section>
 
